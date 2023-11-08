@@ -5,12 +5,12 @@ const app = require("express").notes();
 
 module.exports = function(app) {
 
-app.get('/notes', (req, res) => {
-    readFromFile('/Develop/db/db.json', 'utf8').then((data) => res.json(JSON.parse(data)));
+app.get('/api/notes', (req, res) => {
+    readFromFile('./Develop/db/db.json', 'utf8').then((data) => res.json(JSON.parse(data)));
     });
 
 
-app.post('/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
     console.log(req.body);
 
 
